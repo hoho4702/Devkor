@@ -1,0 +1,77 @@
+.container {
+  background-color: rgb(180, 204, 235);
+  position: auto;
+  width: 100vw;
+}
+
+.main {
+  width: 100%;
+}
+
+.table {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  right: 10%;
+  border-radius: 20px;
+  border-collapse: collapse;
+  vertical-align: middle;
+  background-color: white;
+}
+
+tr {
+  margin: 0px;
+  border-bottom: 1px solid black;
+}
+
+td {
+  text-align: center;
+  padding: 10px;
+  color: rgb(154, 150, 197);
+}
+
+td > img {
+  width: 20%;
+  display: inline;
+  float: left;
+}
+
+td > div {
+  text-align: left;
+}
+
+footer {
+  width: 80%;
+  height: 50px;
+  padding-bottom: 1px;
+  position: relative;
+  left: 10%;
+  right: 10%;
+  text-align: middle;
+}
+
+.edit_cart {
+  width: 60%;
+  margin-top: 10px;
+  display: inline;
+  float: left;
+  text-align: middle;
+  text-decoration: underline;
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+button {
+  background-color: rgb(120, 120, 202);
+  border: 0px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 40%;
+  height: 30px;
+  display: inline;
+  float: left;
+  text-align: middle;
+}

@@ -1,0 +1,74 @@
+.container {
+  position: auto;
+}
+
+.main {
+  width: 100%;
+  min-width: 500px;
+  max-width: 800px;
+}
+
+.email {
+  width: 100%;
+}
+
+.email * {
+  width: 100%;
+}
+
+.name-box {
+  width: 100%;
+}
+
+.name {
+  display: inline;
+  width: 50%;
+  float: left;
+}
+
+p {
+  margin: 5px;
+  padding: 0px;
+  font-size: large;
+}
+
+input[type="email"] {
+  width: 95%;
+  height: 40px;
+}
+
+input {
+  padding: 0px;
+  margin: 5px;
+}
+
+input[type="text"] {
+  width: 90%;
+  height: 40px;
+}
+
+input[type="message"] {
+  width: 95%;
+  height: 120px;
+}
+
+footer {
+  width: 100%;
+  min-width: 500px;
+  max-width: 800px;
+  padding-top: 20px;
+  margin: 5px;
+}
+
+.subscribe {
+  display: inline;
+  float: left;
+  width: 75%;
+}
+
+button[type="submit"] {
+  width: 20%;
+  height: 40px;
+  padding: 2px;
+  background-color: gold;
+}

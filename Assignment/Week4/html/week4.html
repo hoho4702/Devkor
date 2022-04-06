@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>week4</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="alert-box" id="alert">click</div>
+    <button onclick="displayBox('alert')">button</button>
+
+    <script>
+        function displayBox(id) {
+            let button = document.getElementById(id);
+            if(!button) return 0;
+            if(button.style.display == 'none') button.style.display = 'block';
+            else button.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

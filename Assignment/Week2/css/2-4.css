@@ -1,0 +1,144 @@
+.container {
+  background: linear-gradient(lightCyan, skyBlue, deepSkyBlue);
+  width: 100vw;
+  display: flex;
+}
+
+.main {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.first-box {
+  display: inline;
+  float: left;
+  flex-grow: 1;
+}
+
+.first-box p {
+  margin: 0px;
+  font-size: smaller;
+}
+
+.phone {
+  width: 30%;
+  float: right;
+}
+
+.first-box button[type="submit"] {
+  width: 100px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.first-box button[type="submit"]:active {
+  background-color: grey;
+}
+
+.word {
+  width: 100%;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.word p {
+  margin: 5px;
+}
+
+.word button[type="submit"] {
+  width: 120px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.word button[type="submit"]:active {
+  background-color: grey;
+}
+
+.icons {
+  width: 100vw;
+  background: linear-gradient(
+    rgb(134, 169, 245),
+    rgb(205, 198, 238),
+    rgb(187, 173, 226)
+  );
+
+  display: flex;
+  text-align: center;
+}
+
+.second-box {
+  display: inline;
+  float: left;
+  flex-grow: 1;
+
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.second-box p {
+  margin: 0px;
+  font-size: smaller;
+}
+
+.icon {
+  display: inline;
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  color: blue;
+}
+
+.word2 {
+  width: 100%;
+  flex-grow: 1;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.word2 p {
+  margin: 0px;
+}
+
+.pictures {
+  text-align: center;
+}
+
+.pictures-main {
+  display: inline;
+  text-align: center;
+}
+
+.images {
+  width: 45%;
+}
+
+.images:hover {
+  transition: all 0.1s linear;
+  transform: scale(0.8);
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    width: 100%;
+    text-align: center;
+  }
+  .first-box {
+    width: 100%;
+    text-align: center;
+  }
+  .phone {
+    width: 50%;
+    padding-top: 15px;
+    margin-right: 25%;
+  }
+}

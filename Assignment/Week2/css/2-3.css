@@ -1,0 +1,28 @@
+.container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+  text-align: center;
+
+  border-bottom: 5px solid rgba(128, 128, 128, 0.3);
+}
+
+.block {
+  width: 25%;
+  height: 70px;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .block {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .block {
+    width: 100%;
+  }
+}

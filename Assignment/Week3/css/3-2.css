@@ -1,0 +1,126 @@
+.container {
+  text-align: center;
+}
+
+.block {
+  width: 100%;
+  height: 100px;
+  display: block;
+  padding-bottom: 10px;
+}
+
+.introduce {
+  padding-left: 20%;
+  padding-top: 10px;
+  width: 25%;
+  height: 100%;
+  float: left;
+  text-align: right;
+}
+
+.introduce p {
+  padding-right: 5%;
+  width: 95%;
+  margin: 0px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.image-box {
+  width: 10%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 70%;
+}
+
+.introduce2 {
+  padding-right: 20%;
+  padding-top: 10px;
+  width: 25%;
+  height: 100%;
+  float: right;
+  text-align: left;
+}
+
+.introduce2 p {
+  width: 95%;
+  margin: 0px;
+  padding-left: 5%;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.image-box2 {
+  width: 10%;
+  height: 100%;
+  float: right;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .block {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .intro-box {
+    width: 80%;
+    float: right;
+    text-align: left;
+  }
+
+  .introduce {
+    padding-top: 10px;
+    padding-left: 5px;
+    width: 95%;
+    height: 100%;
+    float: left;
+    text-align: left;
+  }
+
+  .introduce p {
+    width: 100%;
+    margin: 0px;
+    padding-left: 5%;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: left;
+  }
+
+  .image-box {
+    width: 20%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+  }
+
+  .introduce2 {
+    padding-top: 10px;
+    padding-left: 5px;
+    width: 95%;
+    height: 100%;
+    float: left;
+    text-align: left;
+  }
+
+  .introduce2 p {
+    width: 100%;
+    margin: 0px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: left;
+  }
+
+  .image-box2 {
+    width: 20%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+  }
+}
