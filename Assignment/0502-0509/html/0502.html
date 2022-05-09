@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>0502</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/c625c92750.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>    
+    <script src="https://kit.fontawesome.com/c625c92750.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <h1>TODO LIST</h1>
+    <div>
+        <div>
+            <i class="fa-solid fa-caret-down" style="cursor: pointer;" id="add"> Add Task </i><br>
+            <div class="infos">
+                <input type="text" id="task" placeholder="Task: DevKor"><br>
+                <input type="text" id="date" placeholder="Date: 0509"><br>
+                <input type="text" id="time" placeholder="Time: 20:30 ~ 22:00"><br>
+                <div class="button">
+                    <button id="add-button">
+                        Add
+                    </button>
+                </div>
+            </div>
+            
+        </div><br>
+        
+        <i class="fa-solid fa-caret-down" style="cursor: pointer;" id="list"> List </i><br><br>
+        <div>
+            <div class="todo-list">
+                
+            </div>
+            <button id="delete-button">
+                Delete
+            </button>
+        </div>
+
+    </div>
+
+    
+    <script>
+        let todoList = $(".todo-list");
+        let selected = [];
+
+        // ADD TASK TOGGLE
+        $("#add").on('click', ()=>{
+            $(".infos").toggleClass("hidden");
+            $("#add").toggleClass("fa-caret-right");
+        })
+
+        // LIST TOGGLE
+        $("#list").on('click', ()=>{
+            $(".todo-list").toggleClass("hidden");
+            $("#delete-button").toggleClass("hidden");
+            $("#list").toggleClass("fa-caret-right");
+        })
+
+        // TEXT-DECORATION TOGGLE
+        $(document).on('change', '.checkBox', function() {
+            if(this.checked) {
+                $(this).parent().css("text-decoration", "line-through");
+                selected.push($(this).parent());
+            }
+            else {
+                // selected = jQuery.grep(selected, function(value) {
+                //     return value != $(this).parent();
+                // })
+                $(this).parent().css("text-decoration", "none");
+            }
+        })
+
+        // DETAIL TOGGLE
+        $(".showDetail").on('click', ()=>{
+            console.log("H?");
+            console.log($(this).parent());
+            console.log($(this).parent().children("detail"));
+            $(this).parent().children("detail").toggleClass("hidden");
+        })
+
+        // ADD-BUTTON CLICKED
+        $("#add-button").on("click", ()=>{
+            let task = $('#task').val();
+            let date = $('#date').val();
+            let time = $('#time').val();
+            todoList.append(`<div class=\"list-element\"><input type="checkbox" class="checkBox">Task: ${task}
+                <p class="detail">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date: ${date} Time: ${time}</p></div>`);
+        })
+    
+        // DELETE-BUTTON CLICKED
+        $("#delete-button").on("click", ()=>{
+            for(let i = 0; i < selected.length; i++)
+                selected[i].remove();
+        })
+
+    </script>
+    </body>
+</html>

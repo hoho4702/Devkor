@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400&display=swap');
+
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.myContainer {
+    height: 400vh;
+    width: 100vw;
+}
+
+.first-container {
+    height: 100vh;
+    display: flex;
+}
+
+.left {
+    height: 100%;
+    width: 35%;
+    background-color: rgb(111, 13, 32);
+}
+
+.left h3 {
+    width: 320px;
+    font-family: 'Nanum Myeongjo', serif;
+    color: rgb(213, 201, 181);
+}
+
+.left .buttons {
+    margin-top: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left .btn {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.rightBox {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(213, 201, 181);
+    /* color:cornsilk; */
+}
+
+.rightBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.kulogo {
+    width: 100%;
+}
+
+.inactive {
+    display: none;
+}
+
+.subcontainers {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.subcontainers p {
+    color: black;
+    font-size: large;
+}
+
+.container-Title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.remainder {
+    width: 55%;
+}
+
+.subBox {
+    text-align: center;
+    width: 45%;
+    z-index: 1;
+}
+
+.subBox p {
+    font-size: 20px;
+}
+
+.bgImg {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+}
+
+.bgImg img {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.btn {
+    margin-top: 30px;
+    border-radius: 15px;
+    font-size: x-large;
+}
+
+.btn-danger {
+    background-color: rgb(112, 21, 32);
+    border: none;
+    font-size: medium;
+}
+
+.btn-outline-light {
+    width: 120px;
+    max-width: 120px;
+}
+
+.none-show {
+    width: 0%;
+}
+
+.show {
+    width: 35%;
+    display: block;
+    transition: all 1s;
+}
+
+.show-right {
+    height: 100%;
+    width: 65%;
+    background-color: rgb(213, 201, 181);
+    color: cornsilk;
+    transition: all 1s;
+}
+
+.remainder {
+    /* border: solid red; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remainder p {
+    text-align: center;
+    width: 65%;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    line-height: 2;
+    opacity: 1;
+}
+
+.music {
+    background-color: rgb(213, 201, 181);
+    border: 0ch;
+}
+
+.hidden {
+    display: none;   
+}

@@ -7,10 +7,10 @@
 </head>
 <body>
     <div class="alert-box" id="alert">click</div>
-    <button onclick="displayBox('alert')">button</button>
+    <button onmouseover="largerButton('alert')">button</button>
 
     <script>
-        function displayBox(id) {
+        function largerButton(id) {
             let button = document.getElementById(id);
             if(!button) return 0;
             if(button.style.display == 'none') button.style.display = 'block';

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Korea University</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- My css -->
+    <link rel="stylesheet" href="../css/temp.css">
+</head>
+
+<body>
+    <div class="myContainer">
+        <section>
+            <div class="first-container">
+                <div class="left none-show">
+
+                    <div class="buttons">
+                        <h3 style="margin-bottom: 100px;">새내기들을 위한 고대 안내</h3>
+                        <a class="btn btn-outline-light" href="#history" role="button">역사</a>
+                        <a class="btn btn-outline-light" href="#festival" role="button">행사</a>
+                        <a class="btn btn-outline-light" href="#schoollife" role="button">학교생활</a>
+                    </div>
+                </div>
+
+                <div class="rightBox">
+                    <div>
+                        <iframe src="../mp3/민족의 아리아.mp3" allow="autoplay" id="mp3" style="display: none;"></iframe>
+                        <button class="music"><i class="fa-solid fa-2x fa-volume-high"></i></button>
+                        <button class="music hidden"><i class="fa-solid fa-2x fa-volume-xmark"></i></button>
+   
+                    </div>
+                    <div class="kulogo">
+                        <img src="images/logo.png" alt="" style="width: 30%;">
+                    </div>
+                </div>
+            </div>
+            <script>
+                setTimeout(() => {
+                    document.querySelector('.left').classList.toggle("show")
+                    document.querySelector('.left').classList.toggle("none-show")
+                    document.querySelector('.rightBox').classList.add("show-right")
+                }, 1000)
+            </script>
+        </section>
+
+        <section id="history">
+            <div class="history-container subcontainers" id="#aaa">
+                <div class="bgImg">
+                    <img src="/images/history2.jpeg" alt="">
+                </div>
+                <div class="subBox">
+                    <div class="container-Title">역사</div>
+                    <p>민족 최초의 근대적 고등교육기관</p>
+                    <a class="btn btn-danger" href="history.html" role="button">더 알아보기</a>
+                </div>
+                <div class="remainder">
+                    <p>"우리가 만드는 대학은 반드시 우리나라나 민족을 대표하는 대학이 되도록 하여야 하겠는 만큼 교명도 반드시 그러한 뜻을 나타내는 것이 되어야 하겠는데, 「조선」이나 「한국」은
+                        역사상 이민족에게 수모를 당한 일이 있어서 싫고, 「고려」도 실은 여진, 몽고 등의 시달림을 받은 일은 있지만 「고구려」의 영광을 계승하여 좋다. 우리나라의 외국어 명칭인
+                        Korea, Corea, Corée도 「고려」의 음을 표기한 것이 아니겠는가."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="festival">
+            <div class="festival-container subcontainers">
+                <div class="remainder">
+                    <p>1962년 5월 5일 학생, 교수, 교우, 학부형, 지역주민들이 함께 어울려 한국 대학 문화의 새 장을 연 제 1회 석탑축전을 시작으로 모든 단과대학, 학과, 동아리 활동을
+                        총집결하는 이 행사기간에는, 캠퍼스 곳곳에서 대학의 지성과 낭만을 만끽할 수 있는 다양한 행사가 열립니다.</p>
+                </div>
+                <div class="bgImg">
+                    <img src="/images/ipselenti.jpeg" alt="">
+                </div>
+                <div class="subBox">
+                    <div class="container-Title">행사</div>
+                    <p>IPSELENTI 지·야의 함성</p>
+                    <a class="btn btn-danger" href="festival.html" role="button">더 알아보기</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="schoollife">
+            <div class="schoolLife-container subcontainers">
+                <div class="bgImg">
+                    <img src="images/schoollife.jpeg" alt="">
+                </div>
+                <div class="subBox">
+                    <div class="container-Title">학교 생활</div>
+                    <p>LIBERTAS, JUSTITIA, VERITAS</p>
+                    <a class="btn btn-danger" href="school_life.html" role="button">더 알아보기</a>
+                </div>
+                <div class="remainder">
+                    <p>고대는 단순히 연구와 교육의 명문이 아니라 나라와 민족의 장래를 계획하고 이를 행동에 옮기는 실천적 지성의 전진기지입니다. 고대생들은 강한 화합과 단결을 통해 범조직적 포용력과 조화, 흡인력을 지향합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <script>
+            let music = document.getElementsByClassName("music");
+        let musicOn = true;
+        const audio = document.getElementById("mp3");
+        music[0].addEventListener('click', ()=>{
+            music[0].classList.toggle("hidden");
+            music[1].classList.toggle("hidden"); 
+            $("#mp3")[0].src += "?autoplay=1";
+            // audio.pauseVideo();
+   
+        });
+        music[1].addEventListener('click', ()=>{
+            music[0].classList.toggle("hidden");
+            music[1].classList.toggle("hidden"); 
+            // audio.playVideo();
+        });
+        </script>
+
+        <script src="https://kit.fontawesome.com/c625c92750.js" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+
+    </div>
+</body>
+
+</html>

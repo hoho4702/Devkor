@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/fm.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="selectFm">
+        <div class="title">
+            <h1>단과대별 FM 안내</h1>
+        </div>
+
+        <label for="name">이름:</label> <input id="name" type="text" style="width: 100px;" placeholder="최창호"><br> 
+        <label for="department">과: </label>
+        <select name="department" id="department">
+            <option value="경영대학">경영대학</option>
+            <option value="정경대학">정경대학</option>
+            <option value="이과대학">이과대학</option>
+            <option value="공과대학">공과대학</option>
+            <option value="정보대학">정보대학</option>
+            <option value="국제대학">국제대학</option>
+            <option value="스마트보안학부">스마트보안학부</option>
+        </select>
+        <input id="bnt" type="submit" value="전송">
+
+        <div class="showFm hidden">
+            경영대학
+        </div>
+        <div class="showFm hidden">
+            정경대
+        </div>
+        <div class="showFm hidden">
+            이과대학
+        </div>
+        <div class="showFm hidden">
+            공과대학
+        </div>
+        <div class="showFm hidden">
+            정보대학
+        </div>
+        <div class="showFm hidden">
+            국제대학
+        </div>
+        <div class="showFm hidden">
+            스마트보안학부
+        </div>
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        const departments = ["경영대학", "정경대학", "이과대학", "공과대학", "정보대학", "국제대학", "스마트보안학부"];
+        const depart = document.getElementById("department");
+        const input = document.getElementById("bnt");
+        const fm = document.getElementsByClassName("showFm");
+
+        let name; document.getElementById("name").value;
+        let studentNumber; document.getElementById("studentNumber");
+
+        let before_idx = 0;
+        let current_idx = 0;
+
+        let departAid;
+        let nameAid = "";
+
+        input.addEventListener('click', () => {
+            name = document.getElementById("name");
+            studentNumber = document.getElementById("studentNumber");
+
+        
+            before_idx = current_idx;
+            current_idx = departments.indexOf(depart.options[depart.selectedIndex].value);
+             
+            fm[before_idx].classList.add("hidden");
+            fm[current_idx].classList.remove("hidden");
+
+            if(current_idx == 0) departAid = "애국경영";
+            else if (current_idx == 1) departAid = "호안정대";
+            else if (current_idx == 2) departAid = "자주이과대";
+            else if (current_idx == 3) departAid = "강철공대";
+            else if (current_idx == 4) departAid = "첨단정통(?)";
+            else if (current_idx == 5) departAid = "무한국제";
+            else if (current_idx == 6) departAid = "정보보호";
+            else departAid = "ERROR!!";
+            
+            for (let i = 0; i < name.value.length; i++) {
+                nameAid += name.value[i];
+                nameAid += "! (어이!)\n";
+            }
+
+            fm[current_idx].innerText = `안녕! 안녕! 안녕하십니까! (어이!)
+            민족 고대 (어이!)
+            ${departAid} (어이!)
+            DevKor 해커톤 우승자! (어이!)
+            ${nameAid}
+            인사 오지게 박습니다~`;
+        })
+    </script>
+    <script src="https://kit.fontawesome.com/c625c92750.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+#send-button {
+}
+
+.infos {
+    display: inline-block;
+}
+
+.button {
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+}

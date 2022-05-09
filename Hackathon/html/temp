@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="first-container">
+            <div class="left">
+                <div class="buttons">
+                    <div class="introbuttons historyButton"> 역사 </div>
+                    <div class="introbuttons festivalButton"> 축제 </div>
+                    <div class="introbuttons schoolLifeButton"> 학교생활 </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="description active"> </div>
+            </div>
+        </div>
+        <div class="history-container"> </div>
+        <div class="festival-container"> </div>
+        <div class="schoolLife-container"> </div>
+    </div>
+</body>
+
+</html>
