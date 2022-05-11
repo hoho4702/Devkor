@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>0502</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/c625c92750.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>    
+    <script src="https://kit.fontawesome.com/c625c92750.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <h1>TODO LIST</h1>
+    <div>
+        <div>
+            <i class="fa-solid fa-caret-down add" style="cursor: pointer;"> Add Task </i><br>
+            <div class="infos">
+                <input type="text" id="task" placeholder="Task: DevKor"><br>
+                <input type="text" id="date" placeholder="Date: 0509"><br>
+                <input type="text" id="time" placeholder="Time: 20:30 ~ 22:00"><br>
+                <div class="button">
+                    <button id="add-button">
+                        Add
+                    </button>
+                    <button id="finish-button" class="hidden">
+                        Finish
+                    </button>
+                </div>
+            </div>
+            
+        </div><br>
+        
+        <div class="todo-lists">
+            <i class="fa-solid fa-caret-down" style="cursor: pointer;" id="list"> List </i><br><br>
+            <div class="todo-list">
+
+            </div>
+            <button id="delete-button">
+                Delete
+            </button>
+        </div>
+
+    </div>
+
+    
+    <script>
+        let todoList = $(".todo-list");
+        let task, task_idx;
+        let date, date_idx;
+        let time, time_idx;
+        let modifying;
+
+        // ADD TASK TOGGLE
+        $(".add").on('click', ()=>{
+            $(".infos").toggleClass("hidden");
+            $("#add").toggleClass("fa-caret-right");
+        })
+
+        // LIST TOGGLE
+        $("#list").on('click', ()=>{
+            $(".todo-list").toggleClass("hidden");
+            $("#delete-button").toggleClass("hidden");
+            $("#list").toggleClass("fa-caret-right");
+        })
+
+        // TEXT-DECORATION TOGGLE
+        $(document).on('change', '.checkBox', function() {
+            if(this.checked) $(this).parent().children(".info").css("text-decoration", "line-through");
+            else $(this).parent().children(".info").css("text-decoration", "none");
+        })
+        
+        // ADD-BUTTON CLICKED
+        $("#add-button").on("click", ()=>{
+            task = $('#task').val();
+            date = $('#date').val();
+            time = $('#time').val();
+            todoList.append(`<div class="list-element">
+                <input type="checkbox" class="checkBox">
+                <div class="info ib"><b>Task:</b> ${task} <b>Date:</b> ${date} <b>Time:</b> ${time}&nbsp;&nbsp;</div>
+                <button class="modify-button">modify</button>&nbsp;
+                <button class="delete-one-button">delete</button>
+                </div>`);
+            $('#task').val('');
+            $('#date').val('');
+            $('#time').val('');
+        })
+
+        // MODIFY-BUTTON CLICKED
+        $(document).on('click', '.modify-button', function(){
+            modifying = $(this).parent(); //modifiying = list-element
+            task_idx = modifying.html().indexOf("Task:");
+            date_idx = modifying.html().indexOf("Date:");
+            time_idx = modifying.html().indexOf("Time:");
+            let tmp = modifying.html().indexOf("&nbsp");
+
+            let m_task = modifying.html().substr(task_idx+10, date_idx-(task_idx+10)-4);
+            let m_date = modifying.html().substr(date_idx+10, time_idx-(date_idx+10)-4);
+            let m_time = modifying.html().substr(time_idx+10, tmp-(time_idx+10));
+
+            $(".add").toggleClass("modify");
+            $(".modify").html(" MODIFYING");
+            $(".todo-lists").toggleClass("hidden");
+
+            $("#add-button").toggleClass("hidden");
+            $("#finish-button").toggleClass("hidden");
+
+            $('#task').val(m_task);
+            $('#date').val(m_date);
+            $('#time').val(m_time);
+        })
+
+        // MODIFY-FINISH CLICKED
+        $(document).on('click', '#finish-button', function(){
+            task = $('#task').val();
+            date = $('#date').val();
+            time = $('#time').val();
+            modifying.html(`<div class="list-element">
+                <input type="checkbox" class="checkBox">
+                <div class="info ib"><b>Task:</b> ${task} <b>Date:</b> ${date} <b>Time:</b> ${time}&nbsp;&nbsp;</div>
+                <button class="modify-button">modify</button>&nbsp;
+                <button class="delete-one-button">delete</button>
+                </div>`);
+            $('#task').val('');
+            $('#date').val('');
+            $('#time').val('');
+
+            $(".add").toggleClass("modify");
+            $(".add").html(" ADD TASK");
+            $(".todo-lists").toggleClass("hidden");
+
+            $("#add-button").toggleClass("hidden");
+            $("#finish-button").toggleClass("hidden");
+        })
+
+        // DELETE-ONE-BUTTON CLICKED
+        $(document).on('click', '.delete-one-button', function(){
+            $(this).parent().remove();
+        })
+
+        // DELETE-BUTTON CLICKED
+        $("#delete-button").on("click", ()=>{
+            $(".list-element").each(function() {
+                if ($(this).children()[0].checked) $(this).remove();
+            })
+        })
+
+        
+    </script>
+    </body>
+</html>

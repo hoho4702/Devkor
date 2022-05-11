@@ -12,3 +12,11 @@
 .hidden {
     display: none;
 }
+
+.fl {
+    float: left;
+}
+
+.ib {
+    display: inline-block;
+}
